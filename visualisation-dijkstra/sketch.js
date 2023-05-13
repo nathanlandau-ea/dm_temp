@@ -89,7 +89,7 @@ class PriorityQueue {
 }
 
 class Grid {
-    constructor(rows, cols, factory = ()=>{return 0}) {
+    constructor(rows, cols, factory = () => { return 0 }) {
         this.rows = rows;
         this.cols = cols;
         this.grid = [];
@@ -131,28 +131,28 @@ class Grid {
     map(fn) {
         for (let row = 0; row < this.rows; row++) {
             for (let col = 0; col < this.cols; col++) {
-                this.grid[row][col]=fn(this.grid[row][col], row, col);
+                this.grid[row][col] = fn(this.grid[row][col], row, col);
             }
         }
     }
 }
 
-class Cell{
-    constructor(){
+class Cell {
+    constructor() {
         this.type = "empty"
         this.color = "#FFFFFF"
         this.distance = 0
     }
 
-    set_type(type){
+    set_type(type) {
         colorMode(HSB)
         let type_colors = {
-            "empty":"#FFFFFF",
-            "source":"#6AE6DF",
+            "empty": "#FFFFFF",
+            "source": "#6AE6DF",
             "wall": "#E67A75",
             "obstacle": "#FF0000",
             "exit": "#98E681",
-            "show_dist": lerpColor(color("#0099FF"), color("#FF0000"), this.distance/150),
+            "show_dist": lerpColor(color("#0099FF"), color("#FF0000"), this.distance / 150),
             "path": "#F7D354"
         }
 
@@ -174,7 +174,7 @@ function make_button(couleur, text, event) {
     return temp;
 }
 
-function make_topbar(cellSize , topBarHeight, nbCellsHorizontal, nbCellsVertical){
+function make_topbar(cellSize, topBarHeight, nbCellsHorizontal, nbCellsVertical) {
     background(68);
     noStroke();
     fill(68);
@@ -201,7 +201,7 @@ function make_topbar(cellSize , topBarHeight, nbCellsHorizontal, nbCellsVertical
     return bar
 }
 
-function make_base_cell(){
+function make_base_cell() {
     return new Cell()
 }
 
@@ -218,7 +218,7 @@ function setup() {
     nbCellsVertical = floor((windowHeight - topBarHeight) / cellSize);
     nbCellsHorizontal = floor(windowWidth / cellSize)
     createCanvas(nbCellsHorizontal * cellSize, nbCellsVertical * cellSize + topBarHeight);
-    bar = make_topbar(cellSize , topBarHeight, nbCellsHorizontal, nbCellsVertical)
+    bar = make_topbar(cellSize, topBarHeight, nbCellsHorizontal, nbCellsVertical)
     selected = 0
     grid = new Grid(nbCellsHorizontal, nbCellsVertical, make_base_cell)
     speed = 10
@@ -233,7 +233,7 @@ function draw() {
     if (mouseIsPressed) {
         var x = floor(mouseX / cellSize)
         var y = floor((mouseY - topBarHeight) / cellSize)
-        try { grid.get(x,y).set_type(selected) } catch (err) { /*console.log(`didn't set type <${selected}> of cell (${x}, ${y})`); console.log(err)*/ }
+        try { grid.get(x, y).set_type(selected) } catch (err) { /*console.log(`didn't set type <${selected}> of cell (${x}, ${y})`); console.log(err)*/ }
     }
     displayGrid(grid)
 }
@@ -243,7 +243,7 @@ function dijkstra() {
     noLoop()
     searchB.style("display", "none")
     unsearchB.style("display", "block")
-    grid.forEach((value, row, col) => {value.x = row; value.y = col; if (value.type === "source"){starts.enqueue(value, value.distance)}})
+    grid.forEach((value, row, col) => { value.x = row; value.y = col; if (value.type === "source") { starts.enqueue(value, value.distance) } })
     // console.log(starts)
     found = false
     intvlID = setInterval(
@@ -251,14 +251,14 @@ function dijkstra() {
             // currEnd = starts.size()
             // for (var index = 0; index < currEnd; index++) {
             item = starts.dequeue()
-            if (item.type === "empty" || item.type === "obstacle"){
+            if (item.type === "empty" || item.type === "obstacle") {
                 item.set_type("show_dist")
-            } else if (item.type === "exit"){
+            } else if (item.type === "exit") {
                 found = item
-            } else if (item.type !== "source"){
+            } else if (item.type !== "source") {
                 // continue
                 return
-            } 
+            }
             x = item.x
             y = item.y
             // console.log(x,y,starts.heap)
@@ -269,22 +269,22 @@ function dijkstra() {
                 dy = ly[delta]
                 if (!grid.isValid(dx, dy)) { continue }
                 if (grid.get(dx, dy).type === "empty" || grid.get(dx, dy).type === "exit") {
-                    if (grid.get(dx, dy).distance === 0){
-                        grid.get(dx, dy).distance = grid.get(x, y).distance+1
+                    if (grid.get(dx, dy).distance === 0) {
+                        grid.get(dx, dy).distance = grid.get(x, y).distance + 1
                         grid.get(dx, dy).parent = grid.get(x, y)
-                    } else if (grid.get(dx, dy).distance > grid.get(x, y).distance+1){
-                        grid.get(dx, dy).distance = grid.get(x, y).distance+1
+                    } else if (grid.get(dx, dy).distance > grid.get(x, y).distance + 1) {
+                        grid.get(dx, dy).distance = grid.get(x, y).distance + 1
                         grid.get(dx, dy).parent = grid.get(x, y)
                     } else {
                         continue
                     }
                     starts.enqueue(grid.get(dx, dy), grid.get(dx, dy).distance)
                 } else if (grid.get(dx, dy).type === "obstacle") {
-                    if (grid.get(dx, dy).distance === 0){
-                        grid.get(dx, dy).distance = grid.get(x, y).distance+5
+                    if (grid.get(dx, dy).distance === 0) {
+                        grid.get(dx, dy).distance = grid.get(x, y).distance + 5
                         grid.get(dx, dy).parent = grid.get(x, y)
-                    } else if (grid.get(dx, dy).distance > grid.get(x, y).distance+5){
-                        grid.get(dx, dy).distance = grid.get(x, y).distance+5
+                    } else if (grid.get(dx, dy).distance > grid.get(x, y).distance + 5) {
+                        grid.get(dx, dy).distance = grid.get(x, y).distance + 5
                         grid.get(dx, dy).parent = grid.get(x, y)
                     } else {
                         continue
