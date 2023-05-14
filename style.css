@@ -5,6 +5,10 @@ html {
     font-size: larger;
 }
 
+figcaption {
+    font-size: smaller;
+}
+
 #NegOmegaChatBot {
     display: inline-block;
     background-color: #009879;
