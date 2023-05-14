@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple de situation réelle</title>
+</head>
+<body>
+    <h1>Exemple de situation réelle</h1>
+    <details>
+        <summary>Présentation de la situation presque réelle</summary>
+        <p>
+            Un pays cherche à relier ses villes par des autoroutes. Cependant, l'État manque d’argent. Il faut donc trouver un moyen pour qu’il soit toujours possible d’aller d’une ville à une autre en prenant uniquement l’autoroute, tout en minimisant le coût de l’infrastructure. On connaît toujours le prix supposé de la route entre deux villes.
+        </p>
+    </details>
+    <details>
+        <summary>Représentation en termes de graphe du problème</summary>
+        <p>
+            On peut représenter les villes par des sommets et les routes par des arêtes dont le poids est le prix de la route. La solution est donc de trouver un MST (arbre couvrant minimum). C’est un arbre, donc c’est un ensemble d’arêtes ne contenant aucun cycle, et reliant n’importe quelle paire de sommets par un chemin. Par exemple, on peut facilement voir que s’il y a un cycle, il existe plusieurs chemins possibles pour aller d’un sommet à un autre, ce qui est redondant, si on veut payer le moins possible. Ensuite, couvrant signifie simplement que l’arbre passe par tous les sommets du graphe. Et finalement, minimum signifie que si on fait la somme des poids des arêtes, on ne peut pas trouver d’autre arbre avec une somme des poids inférieurs.
+        </p>
+    </details>
+    <details>
+        <summary>l’algorithme de Kruskal</summary>
+        <p>
+            On prend simplement l'arête avec un poids minimum et si en la rajoutant on ne forme pas de cycle on la garde. Pour savoir si une arête crée un cycle, on peut vérifier qu’il n’existe pas déjà un chemin entre les deux villes reliés par l’arête, et pour cela on peut utiliser un algorithme appelé Union-Find. Le principe est simple : on assigne à chaque ville un parent, et si deux villes sont de la même famille, elles sont déjà reliées. On commence en se disant que chaque ville n’a pas de parent. Quand on rajoute une arête entre les sommets A et B, on décide que l’ancêtre de B devient le parent de l’ancêtre de A.
+        </p>
+        <code>
+nb_villes = 7
+autoroutes_possibles = [(0, 1, 7), (0, 2, 4), (0, 3, 2), (0, 5, 1), (0, 6, 4), (1, 3, 9), (1, 4, 3), (2, 5, 9), (3, 4, 1), (3, 6, 8), (4, 5, 2), (4, 6, 3)]
+
+# les autoroutes possibles sont représentées 
+# comme un tuple (ville1, ville2, coût)
+# on doit d'abord trier les routes par coût
+
+def cout(autoroute):
+    return autoroute[2]
+
+autoroutes_possibles.sort(key = cout)
+
+
+# on définit les parents de chaque ville à -1 (qui correspond à indéfini)
+parents = [-1]*nb_villes
+
+# on définit la fonction pour trouver l'ancêtre d'une ville
+def ancetre(ville):
+    # si une ville n'a pas de parent, c'est elle l'ancêtre
+    if parents[ville] == -1:
+        return ville
+    # sinon son ancêtre est le même que celui de son parent
+    # donc on peut redéfinir son parent pour être l'ancêtre de son ancien parent
+    parents[ville] = ancetre(parents[ville])
+    return parents[ville]
+
+# on définit la fonction pour vérifier si 
+# deux villes sont déjà reliées
+def deja_reliees(ville1, ville2):
+    return ancetre(ville1) == ancetre(ville2)
+
+# on définit la fonction pour relier deux villes
+def relier(ville1, ville2):
+    parents[ancetre(ville1)] = ancetre(ville2)
+
+prix_total = 0
+nb_autoroutes_ajoutees = 0
+# on effectue l'algorithme de Kruskal
+for autoroute in autoroutes_possibles:
+    if not deja_reliees(autoroute[0], autoroute[1]):
+        prix_total += autoroute[2]
+        relier(autoroute[0], autoroute[1])
+        nb_autoroutes_ajoutees += 1
+    # par définition un arbre contient nb_sommets-1 arêtes
+    if nb_autoroutes_ajoutees == nb_villes - 1:
+        break
+
+print(prix_total)
+        </code>
+    </details>
+</body>
+</html>
