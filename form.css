@@ -1,3 +1,15 @@
+:root{
+    --background-color: #1f2933;
+    --unfocused-border-color: #616e7c;
+    --focused-border-color: #3175fe;
+    --complement-border-color: #FFBF30;
+    --window-background-color: #323f4b;
+    --text-color: #f5f7fa;
+    --border-radius: 5px;
+    font-size: 24px;
+}
+
+
 .container {
     background-color: var(--window-background-color);
     padding: 0;
