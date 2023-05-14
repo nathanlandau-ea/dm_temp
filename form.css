@@ -1,0 +1,108 @@
+.container {
+    background-color: var(--window-background-color);
+    padding: 0;
+    border-radius: var(--border-radius);
+    width: 535px;
+    height: 615px;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 2fr;
+}
+
+.grid-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-header {
+    justify-content: space-around;
+}
+
+.login-header>h1 {
+    margin: 20px auto;
+}
+
+.login-header>p {
+    margin: 0;
+}
+
+.usr-name, .password {
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+}
+
+.button {
+    justify-content: center;
+}
+
+.input-cont {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    gap: 0;
+    justify-content: space;
+    align-items: center;
+}
+
+#username, #password {
+    border-radius: var(--border-radius);
+    border: 2px solid var(--unfocused-border-color);
+    height: 100%;
+    width: calc(70% - 7px);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    padding-left: 7px;
+    background-color: var(--window-background-color);
+    font-size: 24px;
+}
+
+#username:focus, #password:focus {
+    outline: 0;
+    border-color: var(--focused-border-color);
+}
+
+#submit {
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    background-color: var(--focused-border-color);
+    border: 0;
+    border-radius: var(--border-radius);
+    height: 25%;
+    width: 30%;
+    font-size: 20px;
+}
+
+.button {
+    align-items: flex-end;
+    padding-right: calc(15% - 4px);
+}
+
+input+label {
+    background-color: var(--window-background-color);
+    width: max-content;
+    height: max-content;
+    padding-left: 3px;
+    padding-right: 3px;
+    position: relative;
+    transform-origin: 3px center;
+    left: -55%;
+    z-index: 1;
+    transition: .15s ease-in-out;
+}
+
+input:focus+label {
+    transform: scale(.7) translateY(-135%);
+    color: var(--complement-border-color);
+}
+
+input::placeholder {
+    color: var(--window-background-color);
+}
+
+input:not(:placeholder-shown)+label {
+    transform: scale(.7) translateY(-135%);
+    color: #71C462;
+}

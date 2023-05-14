@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La prodigieuse et extraordinaire Encyclopédie Numérique Suprême de la Connaissance Globale et Transversale</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
     <script src="script.js"></script>
 </head>
 
@@ -78,6 +79,32 @@
         <summary>Image non-suspecte</summary>
         <img src="rickroll.jpg" alt="get rickrolled" class="rickroll">
         <p>Cette image provient du clip original de la chanson de Rick Astley : Never Gonna Give You Up</p>
+    </details>
+    <details>
+        <summary>S'inscrire pour recevoir du spam</summary>
+        <img src="spam.jpg" alt="boîte de spam">
+        <p>Image trouvée sur le site ragnagna.fr</p>
+        <form class="container" action="/index.html">
+            <div class="grid-row login-header">
+                <a href="">logo</a>
+                <h1>Inscription</h1>
+            </div>
+            <div class="grid-row usr-name">
+                <div class="input-cont">
+                    <input type="text" name="usr" id="username" autocomplete="off" placeholder="a">
+                    <label class="placeholder" for="username">Identifiant</label>
+                </div>
+            </div>
+            <div class="grid-row password">
+                <div class="input-cont">
+                    <input type="password" name="pwd" id="password" autocomplete="off" placeholder="a">
+                    <label class="placeholder" for="password">Mot de passe</label>
+                </div>
+            </div>
+            <div class="grid-row button">
+                <input type="button" onclick="alert(`You've been trolled !`)" value="Connexion" id="submit">
+            </div>
+        </form>
     </details>
     <details>
         <summary>
