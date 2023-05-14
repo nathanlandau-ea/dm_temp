@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemple de situation réelle</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="python.css">
 </head>
 <body>
@@ -28,53 +28,53 @@
             On prend simplement l'arête avec un poids minimum et si en la rajoutant on ne forme pas de cycle on la garde. Pour savoir si une arête crée un cycle, on peut vérifier qu’il n’existe pas déjà un chemin entre les deux villes reliés par l’arête, et pour cela on peut utiliser un algorithme appelé Union-Find. Le principe est simple : on assigne à chaque ville un parent, et si deux villes sont de la même famille, elles sont déjà reliées. On commence en se disant que chaque ville n’a pas de parent. Quand on rajoute une arête entre les sommets A et B, on décide que l’ancêtre de B devient le parent de l’ancêtre de A.
         </p>
         <div class="highlight"><pre><span></span><span class="n">nb_villes</span> <span class="o">=</span> <span class="mi">7</span>
-            <span class="n">autoroutes_possibles</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-            
-            <span class="c1"># les autoroutes possibles sont représentées </span>
-            <span class="c1"># comme un tuple (ville1, ville2, coût)</span>
-            <span class="c1"># on doit d&#39;abord trier les routes par coût</span>
-            
-            <span class="k">def</span> <span class="nf">cout</span><span class="p">(</span><span class="n">autoroute</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">autoroute</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-            
-            <span class="n">autoroutes_possibles</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="n">cout</span><span class="p">)</span>
-            
-            
-            <span class="c1"># on définit les parents de chaque ville à -1 (qui correspond à indéfini)</span>
-            <span class="n">parents</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">nb_villes</span>
-            
-            <span class="c1"># on définit la fonction pour trouver l&#39;ancêtre d&#39;une ville</span>
-            <span class="k">def</span> <span class="nf">ancetre</span><span class="p">(</span><span class="n">ville</span><span class="p">):</span>
-                <span class="c1"># si une ville n&#39;a pas de parent, c&#39;est elle l&#39;ancêtre</span>
-                <span class="k">if</span> <span class="n">parents</span><span class="p">[</span><span class="n">ville</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="n">ville</span>
-                <span class="c1"># sinon son ancêtre est le même que celui de son parent</span>
-                <span class="c1"># donc on peut redéfinir son parent pour être l&#39;ancêtre de son ancien parent</span>
-                <span class="n">parents</span><span class="p">[</span><span class="n">ville</span><span class="p">]</span> <span class="o">=</span> <span class="n">ancetre</span><span class="p">(</span><span class="n">parents</span><span class="p">[</span><span class="n">ville</span><span class="p">])</span>
-                <span class="k">return</span> <span class="n">parents</span><span class="p">[</span><span class="n">ville</span><span class="p">]</span>
-            
-            <span class="c1"># on définit la fonction pour vérifier si </span>
-            <span class="c1"># deux villes sont déjà reliées</span>
-            <span class="k">def</span> <span class="nf">deja_reliees</span><span class="p">(</span><span class="n">ville1</span><span class="p">,</span> <span class="n">ville2</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">ancetre</span><span class="p">(</span><span class="n">ville1</span><span class="p">)</span> <span class="o">==</span> <span class="n">ancetre</span><span class="p">(</span><span class="n">ville2</span><span class="p">)</span>
-            
-            <span class="c1"># on définit la fonction pour relier deux villes</span>
-            <span class="k">def</span> <span class="nf">relier</span><span class="p">(</span><span class="n">ville1</span><span class="p">,</span> <span class="n">ville2</span><span class="p">):</span>
-                <span class="n">parents</span><span class="p">[</span><span class="n">ancetre</span><span class="p">(</span><span class="n">ville1</span><span class="p">)]</span> <span class="o">=</span> <span class="n">ancetre</span><span class="p">(</span><span class="n">ville2</span><span class="p">)</span>
-            
-            <span class="n">prix_total</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">nb_autoroutes_ajoutees</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="c1"># on effectue l&#39;algorithme de Kruskal</span>
-            <span class="k">for</span> <span class="n">autoroute</span> <span class="ow">in</span> <span class="n">autoroutes_possibles</span><span class="p">:</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">deja_reliees</span><span class="p">(</span><span class="n">autoroute</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">autoroute</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-                    <span class="n">prix_total</span> <span class="o">+=</span> <span class="n">autoroute</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-                    <span class="n">relier</span><span class="p">(</span><span class="n">autoroute</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">autoroute</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-                    <span class="n">nb_autoroutes_ajoutees</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="c1"># par définition un arbre contient nb_sommets-1 arêtes</span>
-                <span class="k">if</span> <span class="n">nb_autoroutes_ajoutees</span> <span class="o">==</span> <span class="n">nb_villes</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="k">break</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">prix_total</span><span class="p">)</span>
-            </pre></div>
+    <span class="n">autoroutes_possibles</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+    
+    <span class="c1"># les autoroutes possibles sont représentées </span>
+    <span class="c1"># comme un tuple (ville1, ville2, coût)</span>
+    <span class="c1"># on doit d&#39;abord trier les routes par coût</span>
+    
+    <span class="k">def</span> <span class="nf">cout</span><span class="p">(</span><span class="n">autoroute</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">autoroute</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    
+    <span class="n">autoroutes_possibles</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="n">cout</span><span class="p">)</span>
+    
+    
+    <span class="c1"># on définit les parents de chaque ville à -1 (qui correspond à indéfini)</span>
+    <span class="n">parents</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">nb_villes</span>
+    
+    <span class="c1"># on définit la fonction pour trouver l&#39;ancêtre d&#39;une ville</span>
+    <span class="k">def</span> <span class="nf">ancetre</span><span class="p">(</span><span class="n">ville</span><span class="p">):</span>
+        <span class="c1"># si une ville n&#39;a pas de parent, c&#39;est elle l&#39;ancêtre</span>
+        <span class="k">if</span> <span class="n">parents</span><span class="p">[</span><span class="n">ville</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ville</span>
+        <span class="c1"># sinon son ancêtre est le même que celui de son parent</span>
+        <span class="c1"># donc on peut redéfinir son parent pour être l&#39;ancêtre de son ancien parent</span>
+        <span class="n">parents</span><span class="p">[</span><span class="n">ville</span><span class="p">]</span> <span class="o">=</span> <span class="n">ancetre</span><span class="p">(</span><span class="n">parents</span><span class="p">[</span><span class="n">ville</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">parents</span><span class="p">[</span><span class="n">ville</span><span class="p">]</span>
+    
+    <span class="c1"># on définit la fonction pour vérifier si </span>
+    <span class="c1"># deux villes sont déjà reliées</span>
+    <span class="k">def</span> <span class="nf">deja_reliees</span><span class="p">(</span><span class="n">ville1</span><span class="p">,</span> <span class="n">ville2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ancetre</span><span class="p">(</span><span class="n">ville1</span><span class="p">)</span> <span class="o">==</span> <span class="n">ancetre</span><span class="p">(</span><span class="n">ville2</span><span class="p">)</span>
+    
+    <span class="c1"># on définit la fonction pour relier deux villes</span>
+    <span class="k">def</span> <span class="nf">relier</span><span class="p">(</span><span class="n">ville1</span><span class="p">,</span> <span class="n">ville2</span><span class="p">):</span>
+        <span class="n">parents</span><span class="p">[</span><span class="n">ancetre</span><span class="p">(</span><span class="n">ville1</span><span class="p">)]</span> <span class="o">=</span> <span class="n">ancetre</span><span class="p">(</span><span class="n">ville2</span><span class="p">)</span>
+    
+    <span class="n">prix_total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nb_autoroutes_ajoutees</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># on effectue l&#39;algorithme de Kruskal</span>
+    <span class="k">for</span> <span class="n">autoroute</span> <span class="ow">in</span> <span class="n">autoroutes_possibles</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">deja_reliees</span><span class="p">(</span><span class="n">autoroute</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">autoroute</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">prix_total</span> <span class="o">+=</span> <span class="n">autoroute</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">relier</span><span class="p">(</span><span class="n">autoroute</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">autoroute</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">nb_autoroutes_ajoutees</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># par définition un arbre contient nb_sommets-1 arêtes</span>
+        <span class="k">if</span> <span class="n">nb_autoroutes_ajoutees</span> <span class="o">==</span> <span class="n">nb_villes</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">prix_total</span><span class="p">)</span>
+    </pre></div>
     </details>
 </body>
 </html>
