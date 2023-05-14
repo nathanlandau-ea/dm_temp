@@ -1,14 +1,13 @@
-function chat(){
+function chat() {
     prompt("Posez n'importe quelle question :")
-    if (confirm("NegOmegaChatBot : Non.") === true){
+    if (confirm("NegOmegaChatBot : Non.") === true) {
         chat()
     }
 }
 
-window.onload = function(){
+window.onload = function () {
     document.getElementById("NegOmegaChatBot").addEventListener(
         "mouseup",
         chat,
-        passiveSupported ? { passive: true } : false
-      );
+    );
 }
