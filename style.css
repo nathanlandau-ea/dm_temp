@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+}
+
 #NegOmegaChatBot {
     border-radius: 10px;
     height: 50px;
