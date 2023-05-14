@@ -12,6 +12,11 @@ html {
     background: #fff;
 }
 
+.rickroll {
+    width: 500px;
+    aspect-ratio: 1;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
