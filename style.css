@@ -5,13 +5,6 @@ html {
     font-size: larger;
 }
 
-/* #NegOmegaChatBot {
-    border-radius: 10px;
-    height: 50px;
-    width: 150px;
-    background: #fff;
-} */
-
 #NegOmegaChatBot {
     display: inline-block;
     background-color: #009879;
@@ -39,11 +32,11 @@ html {
 table {
     width: 100%;
     border-collapse: collapse;
-    /*     margin: 25px 0; */
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
-    /*     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 thead tr {
@@ -73,34 +66,3 @@ tbody tr:nth-of-type(even) {
 tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
-
-/*
-tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
-}
-
-.table-sortable th {
-	cursor: pointer;
-    position: relative;
-}
-
-.table-sortable .th-sort-asc::after {
-	content: "\25b4";
-}
-
-.table-sortable .th-sort-desc::after {
-	content: "\25be";
-}
-
-.table-sortable .th-sort-asc::after,
-.table-sortable .th-sort-desc::after {
- 	margin-left: 5px; 
-    position: absolute;
-    right: 10px;
-}
-
-.table-sortable .th-sort-asc,
-.table-sortable .th-sort-desc {
-	background: rgba(0, 0, 0, 0.1);
-} */
