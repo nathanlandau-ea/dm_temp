@@ -1,5 +1,7 @@
 function chat() {
-    prompt("Posez n'importe quelle question :")
+    if (!prompt("Posez n'importe quelle question :")){
+        return
+    }
     if (confirm("NegOmegaChatBot : Non.") === true) {
         chat()
     }
