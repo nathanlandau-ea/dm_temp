@@ -5,11 +5,28 @@ html {
     font-size: larger;
 }
 
-#NegOmegaChatBot {
+/* #NegOmegaChatBot {
     border-radius: 10px;
     height: 50px;
     width: 150px;
     background: #fff;
+} */
+
+#NegOmegaChatBot {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#NegOmegaChatBot:hover {
+    background-color: #3e8e41;
 }
 
 .rickroll {
@@ -20,11 +37,11 @@ html {
 table {
     width: 100%;
     border-collapse: collapse;
-/*     margin: 25px 0; */
+    /*     margin: 25px 0; */
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
-/*     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+    /*     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
 }
 
 thead tr {
@@ -33,7 +50,8 @@ thead tr {
     text-align: left;
 }
 
-th, td {
+th,
+td {
     padding: 12px 15px;
     width: 25%;
 }
@@ -53,6 +71,7 @@ tbody tr:nth-of-type(even) {
 tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
+
 /*
 tbody tr.active-row {
     font-weight: bold;
