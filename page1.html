@@ -7,6 +7,9 @@
     <title>Exemple de situation réelle</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="python.css">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script src ="script.js"></script>
 </head>
 <body>
     <h1>Exemple de situation réelle</h1>
@@ -22,7 +25,7 @@
             On peut représenter les villes par des sommets et les routes par des arêtes dont le poids est le prix de la route. La solution est donc de trouver un MST (arbre couvrant minimum). C’est un arbre, donc c’est un ensemble d’arêtes ne contenant aucun cycle, et reliant n’importe quelle paire de sommets par un chemin. Par exemple, on peut facilement voir que s’il y a un cycle, il existe plusieurs chemins possibles pour aller d’un sommet à un autre, ce qui est redondant, si on veut payer le moins possible. Ensuite, couvrant signifie simplement que l’arbre passe par tous les sommets du graphe. Et finalement, minimum signifie que si on fait la somme des poids des arêtes, on ne peut pas trouver d’autre arbre avec une somme des poids inférieurs.
         </p>
     </details>
-    <details>
+    <details id = "kruskal">
         <summary>l'algorithme de Kruskal</summary>
         <p>
             On prend simplement l'arête avec un poids minimum et si en la rajoutant on ne forme pas de cycle on la garde. Pour savoir si une arête crée un cycle, on peut vérifier qu’il n’existe pas déjà un chemin entre les deux villes reliés par l’arête, et pour cela on peut utiliser un algorithme appelé Union-Find. Le principe est simple : on assigne à chaque ville un parent, et si deux villes sont de la même famille, elles sont déjà reliées. On commence en se disant que chaque ville n’a pas de parent. Quand on rajoute une arête entre les sommets A et B, on décide que l’ancêtre de B devient le parent de l’ancêtre de A.
@@ -76,6 +79,8 @@
         <span class="k">break</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">prix_total</span><span class="p">)</span>
 </pre></div>
+<button onclick="executeCode()">executer le code</button>
+
     </details>
 </body>
 </html>
