@@ -1,4 +1,4 @@
-:root{
+/*:root{
     --background-color: #797979;
     --unfocused-border-color: #616e7c;
     --focused-border-color: #3175fe;
@@ -117,4 +117,80 @@ input::placeholder {
 input:not(:placeholder-shown)+label {
     transform: scale(.7) translateY(-135%);
     color: #71C462;
+}*/
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-header h1 {
+  font-size: 24px;
+  color: #009879;
+}
+
+.usr-name,
+.password {
+  margin-bottom: 15px;
+}
+
+.input-cont {
+  position: relative;
+}
+
+.input-cont input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-cont label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #999999;
+  transition: all 0.3s ease;
+}
+
+.input-cont input:focus + label,
+.input-cont input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 12px;
+  color: #009879;
+}
+
+.button {
+  text-align: center;
+}
+
+#submit {
+  display: inline-block;
+  background-color: #009879;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #00896d;
 }
