@@ -169,7 +169,7 @@ input::placeholder {
   transform: translateY(-50%);
   pointer-events: none;
   color: #999999;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
 }
 
 .input-cont input:focus + label,
