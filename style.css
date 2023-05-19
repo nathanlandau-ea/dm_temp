@@ -12,6 +12,10 @@ figcaption {
     margin-bottom: 10px;
 }
 
+summary {
+    cursor: grab;
+}
+
 #NegOmegaChatBot {
     display: inline-block;
     background-color: #009879;
