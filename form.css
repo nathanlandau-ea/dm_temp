@@ -183,7 +183,7 @@ input::placeholder {
 .input-cont input,
 .input-cont input:focus,
 .input-cont input:not(:placeholder-shown) {
-  outline: 5px solid #009879;
+  border: 2px solid #009879;
 }
 
 .button {
