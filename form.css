@@ -153,7 +153,7 @@ input::placeholder {
 }
 
 .input-cont input {
-  width: calc(100% - 40px);
+  width: calc(100% - 20px);
   padding: 10px;
   border-radius: 5px;
   border: none;
