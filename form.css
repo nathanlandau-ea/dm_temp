@@ -137,9 +137,6 @@ input:not(:placeholder-shown)+label {
 .login-header h1 {
   font-size: 24px;
   color: #009879;
-  background-color: #ffffff;
-  border-radius: 3px;
-  border: 1px solid #009879;
 }
 
 .usr-name,
@@ -179,6 +176,9 @@ input::placeholder {
   top: 0;
   font-size: 12px;
   color: #009879;
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid #009879;
 }
 
 .button {
