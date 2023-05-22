@@ -17,7 +17,8 @@ figcaption {
 summary {
     cursor: grab;
     margin-bottom: 10px;
-    background: linear-gradient(90deg, rgba(255,252,105,1) -200%, rgba(148,74,240,1) -100%, rgba(255,255,255,1) 0%);
+    background-size: 300% 100%;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 33%, rgba(252,176,69,1) 66%, rgba(255,255,255,1) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -30,13 +31,10 @@ summary:hover {
 
 @keyframes sum-col {
     0% {
-        background-position: 0%;
-    }
-    50% {
-        background-position: 100%;
+        background-position-x: 0%;
     }
     100% {
-        background-position: 200%;
+        background-position-x: 100%;
     }
 }
 
