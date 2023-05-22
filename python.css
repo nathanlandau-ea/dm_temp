@@ -14,7 +14,7 @@ body .hll { background-color: #ffffcc }
 body .c { color: #3D7B7B; font-style: italic } /* Comment */
 body .err { border: 1px solid #FF0000 } /* Error */
 body .k { color: #008000; font-weight: bold } /* Keyword */
-body .o { color: #666666 } /* Operator */
+body .o { color: #aaaaaa } /* Operator */
 body .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
 body .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
 body .cp { color: #9C6500 } /* Comment.Preproc */
@@ -37,7 +37,7 @@ body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
 body .kp { color: #008000 } /* Keyword.Pseudo */
 body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 body .kt { color: #B00040 } /* Keyword.Type */
-body .m { color: #888888 } /* Literal.Number */
+body .m { color: #aaaaaa } /* Literal.Number */
 body .s { color: #BA2121 } /* Literal.String */
 body .na { color: #687822 } /* Name.Attribute */
 body .nb { color: #008000 } /* Name.Builtin */
@@ -53,11 +53,11 @@ body .nt { color: #008000; font-weight: bold } /* Name.Tag */
 body .nv { color: #19177C } /* Name.Variable */
 body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 body .w { color: #bbbbbb } /* Text.Whitespace */
-body .mb { color: #888888 } /* Literal.Number.Bin */
-body .mf { color: #888888 } /* Literal.Number.Float */
-body .mh { color: #888888 } /* Literal.Number.Hex */
-body .mi { color: #888888 } /* Literal.Number.Integer */
-body .mo { color: #888888 } /* Literal.Number.Oct */
+body .mb { color: #aaaaaa } /* Literal.Number.Bin */
+body .mf { color: #aaaaaa } /* Literal.Number.Float */
+body .mh { color: #aaaaaa } /* Literal.Number.Hex */
+body .mi { color: #aaaaaa } /* Literal.Number.Integer */
+body .mo { color: #aaaaaa } /* Literal.Number.Oct */
 body .sa { color: #BA2121 } /* Literal.String.Affix */
 body .sb { color: #BA2121 } /* Literal.String.Backtick */
 body .sc { color: #BA2121 } /* Literal.String.Char */
@@ -77,4 +77,4 @@ body .vc { color: #19177C } /* Name.Variable.Class */
 body .vg { color: #19177C } /* Name.Variable.Global */
 body .vi { color: #19177C } /* Name.Variable.Instance */
 body .vm { color: #19177C } /* Name.Variable.Magic */
-body .il { color: #666666 } /* Literal.Number.Integer.Long */
+body .il { color: #aaaaaa } /* Literal.Number.Integer.Long */
