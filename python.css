@@ -41,14 +41,14 @@ body .m { color: #aaaaaa } /* Literal.Number */
 body .s { color: #BA2121 } /* Literal.String */
 body .na { color: #687822 } /* Name.Attribute */
 body .nb { color: #aa22ff } /* Name.Builtin */
-body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .nc { color: #6969ff; font-weight: bold } /* Name.Class */
 body .no { color: #880000 } /* Name.Constant */
 body .nd { color: #AA22FF } /* Name.Decorator */
 body .ni { color: #717171; font-weight: bold } /* Name.Entity */
 body .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
-body .nf { color: #0000FF } /* Name.Function */
+body .nf { color: #6969ff } /* Name.Function */
 body .nl { color: #767600 } /* Name.Label */
-body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nn { color: #6969ff; font-weight: bold } /* Name.Namespace */
 body .nt { color: #008000; font-weight: bold } /* Name.Tag */
 body .nv { color: #19177C } /* Name.Variable */
 body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
@@ -72,7 +72,7 @@ body .sr { color: #A45A77 } /* Literal.String.Regex */
 body .s1 { color: #BA2121 } /* Literal.String.Single */
 body .ss { color: #19177C } /* Literal.String.Symbol */
 body .bp { color: #008000 } /* Name.Builtin.Pseudo */
-body .fm { color: #0000FF } /* Name.Function.Magic */
+body .fm { color: #6969ff } /* Name.Function.Magic */
 body .vc { color: #19177C } /* Name.Variable.Class */
 body .vg { color: #19177C } /* Name.Variable.Global */
 body .vi { color: #19177C } /* Name.Variable.Instance */
