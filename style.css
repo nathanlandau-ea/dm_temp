@@ -27,7 +27,7 @@ summary {
 
 summary:hover {
     animation-name: sum-col;
-    animation-duration: .7s;
+    animation-duration: 3s;
 }
 
 @keyframes sum-col {
