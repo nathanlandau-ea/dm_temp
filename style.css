@@ -23,6 +23,23 @@ summary {
     -webkit-text-fill-color: transparent;
 }
 
+summary:hover {
+    animation-name: sum-col;
+    animation-duration: .7s;
+}
+
+@keyframes sum-col {
+    0% {
+        background: linear-gradient(90deg, rgba(255,252,105,1) 0%, rgba(148,74,240,1) 0%, rgba(255,255,255,1) 0%);
+    }
+    50% {
+        background: linear-gradient(90deg, rgba(255,252,105,1) 0%, rgba(148,74,240,1) 0%, rgba(255,255,255,1) 100%);
+    }
+    100% {
+        background: linear-gradient(90deg, rgba(255,252,105,1) 0%, rgba(148,74,240,1) 100%, rgba(255,255,255,1) 100%);
+    }
+}
+
 #NegOmegaChatBot {
     display: inline-block;
     background-color: #009879;
