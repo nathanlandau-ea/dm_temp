@@ -79,3 +79,10 @@ tbody tr:nth-of-type(even) {
 tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
+
+h1 {
+    background: linear-gradient(120deg, rgba(255,128,0,1) 0%, rgba(255,0,228,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
