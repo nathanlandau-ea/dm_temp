@@ -17,8 +17,8 @@ figcaption {
 summary {
     cursor: grab;
     margin-bottom: 10px;
-    background-size: 300% 100%;
     background: linear-gradient(90deg, rgba(29,253,239,1) 0%, rgba(69,91,252,1) 33%, rgba(252,0,255,1) 66%, rgba(255,0,0,1) 100%);
+    background-size: 300% 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
