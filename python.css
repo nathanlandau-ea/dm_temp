@@ -4,7 +4,7 @@ Copyright 2006-2023 by the Pygments team.
 Licensed under the BSD license, see LICENSE for details.
 */
 div.highlight {background-color: #000000; padding: 5px; border-radius: 5px;}
-pre { line-height: 125%; color: #dddddd;}
+pre { line-height: 125%; color: #eeeeee;}
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
