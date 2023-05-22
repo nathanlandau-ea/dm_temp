@@ -5,6 +5,8 @@ html {
     font-size: larger;
     padding-left: 100px;
     padding-right: 100px;
+    color: white;
+    background-color: #24292e;
 }
 
 figcaption {
