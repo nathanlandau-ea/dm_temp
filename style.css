@@ -19,6 +19,7 @@ summary {
     margin-bottom: 10px;
     background-image: linear-gradient(90deg, rgba(29,253,239,1) 0%, rgba(69,91,252,1) 33%, rgba(255,255,255,1) 66%, rgba(255,255,255,1) 100%);
     background-clip: text;
+    animation-fill-mode: both;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -30,10 +31,10 @@ summary:hover {
 
 @keyframes sum-col {
     0% {
-        background-position-x: 0%;
+        background-position-x: 100%;
     }
     100% {
-        background-position-x: 100%;
+        background-position-x: 0%;
     }
 }
 
