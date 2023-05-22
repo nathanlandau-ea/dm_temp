@@ -19,7 +19,7 @@ summary {
     margin-bottom: 10px;
     background-image: linear-gradient(90deg, rgba(29,253,239,1) 0%, rgba(69,91,252,1) 33%, rgba(255,255,255,1) 66%, rgba(255,255,255,1) 100%);
     background-size: 300% 100%;
-    background-position-x: 0%;
+    background-position-x: 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -27,7 +27,7 @@ summary {
 }
 
 summary:hover {
-    background-position-x: 100%;
+    background-position-x: 0%;
 }
 
 #NegOmegaChatBot {
