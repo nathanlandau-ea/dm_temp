@@ -10,7 +10,7 @@ span.linenos { color: inherit; background-color: transparent; padding-left: 5px;
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 body .hll { background-color: #ffffcc }
-body { background: #f8f8f8; }
+/* body { background: #f8f8f8; } */
 body .c { color: #3D7B7B; font-style: italic } /* Comment */
 body .err { border: 1px solid #FF0000 } /* Error */
 body .k { color: #008000; font-weight: bold } /* Keyword */
