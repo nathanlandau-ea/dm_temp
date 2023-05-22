@@ -5,6 +5,8 @@ html {
     font-size: larger;
     padding-left: 100px;
     padding-right: 100px;
+    color: white;
+    background-color: #24292e;
 }
 
 figcaption {
@@ -14,6 +16,18 @@ figcaption {
 
 summary {
     cursor: grab;
+    margin-bottom: 10px;
+    background-image: linear-gradient(90deg, rgba(29,253,239,1) 0%, rgba(69,91,252,1) 33%, rgba(255,255,255,1) 66%, rgba(255,255,255,1) 100%);
+    background-size: 300% 100%;
+    background-position-x: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 2s;
+}
+
+summary:hover {
+    background-position-x: 0%;
 }
 
 #NegOmegaChatBot {
@@ -71,9 +85,23 @@ tbody tr {
 }
 
 tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #f3f3f342;
 }
 
 tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
+}
+
+h1 {
+    background: linear-gradient(120deg, rgba(255,128,0,1) 0%, rgba(255,0,228,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    background: linear-gradient(60deg, rgba(0,255,141,1) 0%, rgba(0,155,255,1) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
