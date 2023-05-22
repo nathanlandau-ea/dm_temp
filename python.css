@@ -13,7 +13,7 @@ body .hll { background-color: #ffffcc }
 /* body { background: #f8f8f8; } */
 body .c { color: #3D7B7B; font-style: italic } /* Comment */
 body .err { border: 1px solid #FF0000 } /* Error */
-body .k { color: #008000; font-weight: bold } /* Keyword */
+body .k { color: #17b4ff; font-weight: bold } /* Keyword */
 body .o { color: #aaaaaa } /* Operator */
 body .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
 body .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
@@ -40,7 +40,7 @@ body .kt { color: #B00040 } /* Keyword.Type */
 body .m { color: #aaaaaa } /* Literal.Number */
 body .s { color: #BA2121 } /* Literal.String */
 body .na { color: #687822 } /* Name.Attribute */
-body .nb { color: #008000 } /* Name.Builtin */
+body .nb { color: #aa22ff } /* Name.Builtin */
 body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 body .no { color: #880000 } /* Name.Constant */
 body .nd { color: #AA22FF } /* Name.Decorator */
