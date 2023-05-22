@@ -86,3 +86,10 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+h2 {
+    background: linear-gradient(60deg, rgba(0,255,141,1) 0%, rgba(0,155,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
