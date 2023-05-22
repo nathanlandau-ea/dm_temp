@@ -39,15 +39,15 @@ body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 body .kt { color: #B00040 } /* Keyword.Type */
 body .m { color: #aaaaaa } /* Literal.Number */
 body .s { color: #BA2121 } /* Literal.String */
-body .n { color: #f8642a }
+body .n { color: #f8642a } /* variable name */
 body .na { color: #687822 } /* Name.Attribute */
-body .nb { color: #aa22ff } /* Name.Builtin */
+body .nb { color: #d48fff } /* Name.Builtin */
 body .nc { color: #6969ff; font-weight: bold } /* Name.Class */
 body .no { color: #880000 } /* Name.Constant */
 body .nd { color: #AA22FF } /* Name.Decorator */
 body .ni { color: #717171; font-weight: bold } /* Name.Entity */
 body .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
-body .nf { color: #6969ff } /* Name.Function */
+body .nf { color: #d48fff } /* Name.Function */
 body .nl { color: #767600 } /* Name.Label */
 body .nn { color: #6969ff; font-weight: bold } /* Name.Namespace */
 body .nt { color: #008000; font-weight: bold } /* Name.Tag */
