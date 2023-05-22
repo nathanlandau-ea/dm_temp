@@ -17,7 +17,9 @@ figcaption {
 summary {
     cursor: grab;
     margin-bottom: 10px;
-    background: linear-gradient(90deg, rgba(255,252,105,1) 0%, rgba(148,74,240,1) 0%, rgba(255,255,255,1) 0%);
+    --white: 0%;
+    --purple: 0%;
+    background: linear-gradient(90deg, rgba(255,252,105,1) 0%, rgba(148,74,240,1) var(--purple), rgba(255,255,255,1) var(--white));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -26,29 +28,20 @@ summary {
 summary:hover {
     animation-name: sum-col;
     animation-duration: .7s;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 @keyframes sum-col {
     0% {
-        background: linear-gradient(90deg, rgba(255,252,105,1) 0%, rgba(148,74,240,1) 0%, rgba(255,255,255,1) 0%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        --white: 0%;
+        --purple: 0%;
     }
     50% {
-        background: linear-gradient(90deg, rgba(255,252,105,1) 0%, rgba(148,74,240,1) 0%, rgba(255,255,255,1) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        --white: 100%;
+        --purple: 0%;
     }
     100% {
-        background: linear-gradient(90deg, rgba(255,252,105,1) 0%, rgba(148,74,240,1) 100%, rgba(255,255,255,1) 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        --white: 100%;
+        --purple: 100%;
     }
 }
 
