@@ -14,9 +14,9 @@ window.onload = function () {
     );
 }
 
-function executeCode(){
-    code = document.getElementsByTag("pre")[0].innerText
-    pyscript_element = document.createElement("py-script")
-    pyscript_element.innerText = code
-    document.getElementById("kruskal").append(pyscript_element)
-}
+// function executeCode(){
+//     code = document.getElementsByTag("pre")[0].innerText
+//     pyscript_element = document.createElement("py-script")
+//     pyscript_element.innerText = code
+//     document.getElementById("kruskal").append(pyscript_element)
+// }
