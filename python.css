@@ -39,6 +39,7 @@ body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 body .kt { color: #B00040 } /* Keyword.Type */
 body .m { color: #aaaaaa } /* Literal.Number */
 body .s { color: #BA2121 } /* Literal.String */
+body .n { color: #f8642a }
 body .na { color: #687822 } /* Name.Attribute */
 body .nb { color: #aa22ff } /* Name.Builtin */
 body .nc { color: #6969ff; font-weight: bold } /* Name.Class */
